@@ -2,3 +2,11 @@ RAML 1.0 Spec: https://github.com/raml-org/raml-spec/blob/master/versions/raml-1
 
 Tutorial: https://raml.org/developers/raml-100-tutorial
 
+1. Define Resources
+
+```
+/users:
+  /authors:
+    /{authorname}:
+  /books:
+```
