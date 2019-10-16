@@ -23,6 +23,10 @@ Tutorial 200: https://raml.org/developers/raml-200-tutorial
     post:
 ```
 
+Semantics: 
+- Safe methods: GET, HEAD, OPTION, TRACE
+- Idempotent methods: PUT, DELETE
+
 3. Configure Default Media Type
 
 ```
@@ -30,3 +34,77 @@ mediaType:
   - application/json
 ```
 
+4. Response types
+
+Status code:
+
+- 1xx (Informational): The request was received, continuing process
+
+- 2xx (Successful): The request was successfully received, understood, and accepted
+
+- 3xx (Redirection): Further action needs to be taken in order to complete the request
+
+- 4xx (Client Error): The request contains bad syntax or cannot be fulfilled
+
+- 5xx (Server Error): The server failed to fulfill an apparently valid request
+
+GET, HEAD:
+HTTP 200 Ok: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200
+
+POST:
+HTTP 201 Created: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201
+
+HTTP 202 Accepted: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202
+
+PUT:
+HTTP 204 No Content: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204
+
+```
+/users:
+  get:
+    responses:
+      200:
+```
+
+Error codes:
+
+HTTP 404 Not Found
+HTTP 410 Gone
+
+
+5. Define body
+
+```
+body:
+  properties:
+    message: string
+    status: number
+```
+
+6. Optional response type
+
+```
+headers:
+  Accept?:
+
+responses:
+  200:
+    body:
+      application/json:
+      application/xml:
+  406:
+    body:
+      properties:
+        message: string
+```
+
+7. Optional cache
+
+```
+responses:
+  200:
+    headers:
+      Cache-Control:
+      Expires: 
+        type: datetime
+```
