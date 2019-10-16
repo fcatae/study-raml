@@ -7,3 +7,18 @@ baseUri: http://api.samplehost.com
   /authors:
     /{authorname}:
   /books:
+    get:
+      queryParameters:
+          author:
+            displayName: Author
+            type: string
+            description: Author's name
+            example: Fabricio
+            required: false
+          publicationYear:
+          rating:
+          isbn:
+      responses:
+
+    put:
+    post:

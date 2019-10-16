@@ -10,3 +10,14 @@ Tutorial: https://raml.org/developers/raml-100-tutorial
     /{authorname}:
   /books:
 ```
+
+2. Define Methods
+
+```
+/users:
+  /authors:
+  /books:
+    get:
+    post:
+```
+
