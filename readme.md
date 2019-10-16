@@ -108,3 +108,26 @@ responses:
       Expires: 
         type: datetime
 ```
+
+8. Replace generic body with typed-body
+
+```
+types:
+  messageType: !include message.raml
+
+...
+
+body:
+  type: messageType
+```
+
+9. Validate data types
+
+```
+currency:
+  type: string
+  pattern: ^[A-Z]{3,3}$
+```
+
+10. Create Named Examples
+
