@@ -174,3 +174,14 @@ resourceTypes:
   type: collection
 ```
 
+2. Traits
+
+```
+traits:
+  acceptHeader:
+    headers:
+      Accept?:
+        description: specify the media type
+        example: application/json
+```
+
