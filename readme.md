@@ -151,3 +151,26 @@ example:
   idade: 15
 ```
 
+Library
+=========
+
+1. Resource Type
+
+```
+#%RAML 1.0 ResourceType
+get:
+post?:
+```
+
+Uso:
+
+```
+#%RAML 1.0
+
+resourceTypes:
+  collection: !include resource.raml
+
+/test:
+  type: collection
+```
+

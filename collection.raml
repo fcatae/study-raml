@@ -1,0 +1,14 @@
+#%RAML 1.0 ResourceType
+get:
+  description: List <<resourcePathName | !singularize>>
+  displayName: Get<<resourcePathName>>
+  
+post?:
+  description: Add a new <<resourcePathName | !singularize>>
+  displayName: <<resourcePathName>>ABC
+  body:
+    application/json:
+      properties:
+        nome: string
+  responses:
+    201:
