@@ -131,3 +131,23 @@ currency:
 
 10. Create Named Examples
 
+```
+#%RAML 1.0 NamedExample
+value:
+  nome: fabricio
+```
+
+Use both data type and example:
+
+```
+#%RAML 1.0 DataType
+type: object
+properties:
+  nome: string
+  idade: number
+  altura?: number
+example:
+  nome: fabio
+  idade: 15
+```
+
