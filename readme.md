@@ -185,3 +185,27 @@ traits:
         example: application/json
 ```
 
+3. Libraries
+
+```
+#%RAML 1.0 Library
+usage: use the following traits
+
+types:
+resourceTypes:
+traits:
+securitySchemes:
+```
+
+references:
+
+```
+uses:
+   Traits: library.raml
+```
+
+Overlay
+
+Extension
+
+Security Scheme
