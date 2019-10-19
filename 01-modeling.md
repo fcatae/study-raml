@@ -1,4 +1,5 @@
 Modelagem
+==========
 
 ## 1. Requisitos funcionais ##
 
@@ -24,14 +25,14 @@ Considerando a semântica associada aos métodos:
 
 Modelagem:
 /customers (GET, POST)
-/customers/{id} (PUT, DELETE)
+/customers/{id} (GET, PUT, DELETE)
 /customers/{id}/accounts (GET)
 
 ## 4. Criação da API ##
 
 Definição inicial da API contendo título e versão, incluindo URI.
 
-```
+```yaml
 title: Customer API
 version: v1
 baseUri: http://proj-customer.us-e2.cloudhub.io/api
@@ -41,16 +42,24 @@ mediaType:
 
 ## 5. Definição da hierarquia ##
 
-Inicialmente, queremos representar o modelo nas camadas:
+Inicialmente, queremos representar o modelo usando recursos:
 
-```
-/customers
-/customers/{id}
-/customers/{id}/accounts
-```
-
-```
+```yaml
 /customers:
   /{customer_id}:
     /accounts:
+```
+
+Em seguida, definimos os métodos:
+
+```yaml
+/customers:
+  get:
+  post:
+  /{customer_id}:
+    get:
+    put:
+    delete:
+    /accounts:
+      get:
 ```
