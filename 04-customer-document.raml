@@ -1,0 +1,55 @@
+#%RAML 1.0
+title: Customer API
+version: v1
+baseUri: http://proj-customer/api
+mediaType:
+  - application/json
+
+documentation:
+  - !include 04-documentation.raml
+
+uses:
+  Types: 04-customer-library.raml
+
+/customers:
+  get:
+    displayName: Obter Clientes
+    description: Buscar a lista inteira de clientes com relação à base
+                 de dados
+    responses:
+      200:
+        body: Types.Customer[]
+  post:
+    displayName: Criar Cliente
+    description: Incluir um novo cliente na base de dados de clientes
+    body:
+    responses:
+      201:
+  /{customer_id}:
+    uriParameters:
+      customer_id:
+        displayName: ID Cliente
+        type: number
+
+    get:
+      displayName: Retornar cliente por ID
+      responses:
+        200:
+          body: Types.Customer
+        400:
+    put:
+      displayName: Atualizar informações do Cliente
+      body: Types.Customer
+      responses:
+        201:
+        204:
+    delete:
+      displayName: Apagar Cliente por ID
+      responses:
+        204:
+    /accounts:
+      get:
+        displayName: Retornar lista de contas
+        responses:
+          200:
+            body: Account[]

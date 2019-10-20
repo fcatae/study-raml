@@ -141,3 +141,10 @@ types:
       state: string
       country: string
 ```
+
+A referência é feita sem usar `!include`:
+
+```yaml
+uses:
+  Types: 04-customer-library.raml
+```
