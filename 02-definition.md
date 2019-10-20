@@ -118,12 +118,23 @@ Exemplo:
 
 Entretanto, é possível especificar respostas
 
-HTTP 403 Forbidden
-HTTP 409 Conflict
-HTTP 410 Gone
+- HTTP 403 Forbidden
+- HTTP 409 Conflict
+- HTTP 410 Gone
 
 Na dúvida, podemos usar o HTTP 400 genérico para indicar erro na construção da
 requisição e que não deve ser reenviada ao servidor.
+
+Erros 500 são normalmente temporários e causados do lado do servidor. O erro
+pode ser uma falha de rede ou mesmo do servidor. Em geral, o cliente pode reenviar
+a requisição mais tarde.
+
+Existem alguns casos específicos:
+- HTTP 501 Not Implemented
+- HTTP 502 Bad Gateway
+- HTTP 503 Service Unavailable
+- HTTP 504 Gateway Timeout
+
 
 ## 4. Modelagem CRUD ##
 
