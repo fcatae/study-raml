@@ -1,0 +1,17 @@
+#%RAML 1.0
+title: Customer API
+version: v0
+mediaType: application/json
+
+securitySchemes:
+  customTokenSecurity:
+    type: x-customToken
+    describedBy:
+      headers:
+        Authorization:
+
+securedBy:
+  - customTokenSecurity
+  
+/login:
+  post:

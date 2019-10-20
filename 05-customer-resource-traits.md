@@ -82,3 +82,21 @@ Assim, podemos definir:
       - hasAcceptHeader
       - cacheable
 ```
+
+Igualmente podemos configurar a forma de autenticação/autorização:
+
+```yaml
+securitySchemes: 
+  customTokenSecurity:
+    type: x-customToken
+    describedBy: 
+      headers: 
+        Authorization:
+```
+
+Depois configuramos para os recursos:
+
+```yaml
+securedBy:
+  - customTokenSecurity
+```
