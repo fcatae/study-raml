@@ -1,0 +1,30 @@
+#%RAML 1.0
+title: Customer API
+version: v1
+baseUri: http://proj-customer/api
+mediaType:
+  - application/json
+
+/customers:
+  get:
+    responses:
+      200:
+  post:
+    responses:
+      201:
+  /{customer_id}:
+    get:
+      responses:
+        200:
+        400:
+    put:
+      responses:
+        201:
+        204:
+    delete:
+      responses:
+        204:
+    /accounts:
+      get:
+        responses:
+          200:
