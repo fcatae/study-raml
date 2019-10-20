@@ -1,0 +1,44 @@
+#%RAML 1.0
+title: api-restype
+version: v0
+mediaType:
+  - application/json
+
+resourceTypes:
+  collection:
+    get:
+      displayName: Lista<<itemName | !singularize >>
+    post:
+      displayName: Incluir<<itemName | !singularize >>
+  collectionItem:
+    get:
+      displayName: Lista<<itemName | !singularize >>
+    put:
+      displayName: Alterar<<itemName | !singularize >>
+    delete:
+      displayName: Apaga<<itemName | !singularize >>
+
+traits:
+  hasAcceptHeader:
+    headers:
+      Accept: string
+
+  cacheable:
+    headers:
+      Cache-Control:
+        example: private, max-age=31536000
+      Expires:
+        type: datetime
+        example: Sun, 20 Oct 2019 20:00:00 GMT
+        format: rfc2616
+
+/customers:
+  type:
+    collection:
+      itemName: Clientes
+  /{customer_id}:
+    type:  { collectionItem: {itemName : Cliente } }
+
+/download:
+  get:
+    is: [ hasAcceptHeader ]
