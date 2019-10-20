@@ -3,7 +3,7 @@ Documentation
 
 ## 1. Create a document ##
 
-Create a fragment:
+Criar um fragmento da documentação:
 
 ```yaml
 #%RAML 1.0 DocumentationItem
@@ -13,3 +13,10 @@ content: |
 ```
 
 ## 2. Link the documentation ##
+
+Incluir a lista da documentação:
+
+```yaml
+documentation:
+  - !include 04-documentation.raml
+```
