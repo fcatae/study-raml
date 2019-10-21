@@ -107,7 +107,22 @@ prop:
 
 ## 5. Criando exemplos ##
 
+Os exemplos podem ser colocados junto com os tipos de dados. Por exemplo,
 
+```yaml
+properties:
+  id: string
+  name: string
+example: 
+  id: 'ABC001'
+  name: 'Fabricio'
+```
+
+É possível usar uma notação compacta em uma linha ou mais:
+
+```yaml
+example: { id: 'ABC001', name: 'Fabricio' }
+```
 
 ## 6. Organizando em arquivos ##
 
