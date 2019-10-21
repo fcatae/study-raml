@@ -163,3 +163,14 @@ Um exemplo semelhante ao banco de dados:
 
 Lembrando que sempre podemos usar os tipos genéricos HTTP 200 e 400 para
 definir o retorno.
+
+## 5. Modelagem Async ##
+
+/resource
+HTTP202 Accepted
+Location: /resources/<id>/status
+
+/status
+HTTP200 Ok: status = working
+HTTP303 Location: /resource/<id> (status=success)
+HTTP503 
